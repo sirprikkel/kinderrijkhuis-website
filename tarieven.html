@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tarieven Kinderrijkhuis Sambeek 2026. KDV €12/uur, BSO €11/uur. Facturatie per kwartier. Vaste en flexibele opvang.">
+  <title>Tarieven | Kinderrijkhuis Sambeek</title>
+  <link rel="icon" href="images/logo.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { heading: ['Fredoka','sans-serif'], body: ['Nunito','sans-serif'] },
+        colors: { primary:'#4F46E5','primary-light':'#818CF8',cta:'#F97316','cta-hover':'#EA580C',bg:'#EEF2FF','bg-warm':'#FFF7ED',dark:'#1E1B4B','clay-peach':'#FDBCB4','clay-blue':'#ADD8E6','clay-mint':'#98FF98','clay-lilac':'#E6E6FA' },
+        borderRadius: { clay:'20px' }
+      }}
+    }
+  </script>
+  <style>
+    *{font-family:'Nunito',sans-serif}h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
+    .clay-card{border-radius:20px;border:3px solid rgba(0,0,0,.08);box-shadow:inset -2px -2px 6px rgba(0,0,0,.06),4px 4px 12px rgba(79,70,229,.12);transition:transform .2s ease-out,box-shadow .2s ease-out}
+    .clay-card:hover{transform:translateY(-4px);box-shadow:inset -2px -2px 6px rgba(0,0,0,.06),6px 8px 20px rgba(79,70,229,.18)}
+    .clay-btn{border-radius:16px;border:3px solid rgba(0,0,0,.1);box-shadow:inset -1px -1px 4px rgba(0,0,0,.08),3px 3px 8px rgba(0,0,0,.12);transition:all .2s ease-out;cursor:pointer}
+    .clay-btn:hover{transform:translateY(-2px)}.clay-btn:active{transform:translateY(1px)}
+    .nav-mobile{display:none;position:fixed;inset:0;z-index:50;background:rgba(30,27,75,.95);backdrop-filter:blur(10px)}.nav-mobile.active{display:flex}
+    @media(prefers-reduced-motion:reduce){.clay-card:hover,.clay-btn:hover{transform:none}}
+  </style>
+</head>
+<body class="bg-bg text-dark font-body">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b-3 border-primary/10 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
+      <a href="index.html" class="flex items-center gap-3 cursor-pointer"><img src="images/logo.jpg" alt="Kinderrijkhuis logo" class="h-10 md:h-14 rounded-clay object-contain"><span class="font-heading font-semibold text-lg md:text-xl text-primary hidden sm:block">Kinderrijkhuis</span></a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Home</a>
+        <a href="opvang.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Opvang</a>
+        <a href="tarieven.html" class="font-semibold text-primary hover:text-cta transition-colors duration-200 cursor-pointer">Tarieven</a>
+        <a href="informatie.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Informatie</a>
+        <a href="contact.html" class="clay-btn bg-cta text-white font-bold px-5 py-2 hover:bg-cta-hover">Contact</a>
+      </div>
+      <button id="menuToggle" class="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer" aria-label="Menu openen"><svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </nav>
+  <div id="mobileNav" class="nav-mobile flex-col items-center justify-center gap-8">
+    <button id="menuClose" class="absolute top-5 right-5 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer" aria-label="Menu sluiten"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    <a href="index.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Home</a>
+    <a href="opvang.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Opvang</a>
+    <a href="tarieven.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Tarieven</a>
+    <a href="informatie.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Informatie</a>
+    <a href="contact.html" class="clay-btn bg-cta text-white text-xl font-bold px-8 py-3 cursor-pointer">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <section class="pt-28 pb-12 bg-gradient-to-br from-primary to-primary-light">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Tarieven 2026</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Eerlijk en transparant. U betaalt alleen voor de uren die u daadwerkelijk gebruikt.</p>
+    </div>
+  </section>
+
+  <!-- Tarieven Cards -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-8 mb-12">
+        <div class="clay-card bg-white p-8 text-center">
+          <div class="w-16 h-16 rounded-clay bg-clay-peach/50 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h2 class="font-heading text-2xl font-bold text-dark mb-2">KDV / PSZ</h2>
+          <p class="text-dark/60 mb-4">0–4 jaar</p>
+          <p class="font-heading text-5xl font-bold text-primary mb-2">€12<span class="text-xl text-dark/40">/uur</span></p>
+          <p class="text-dark/60 text-sm">Facturatie per kwartier</p>
+        </div>
+        <div class="clay-card bg-white p-8 text-center">
+          <div class="w-16 h-16 rounded-clay bg-clay-mint/50 flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h2 class="font-heading text-2xl font-bold text-dark mb-2">BSO</h2>
+          <p class="text-dark/60 mb-4">4–12 jaar</p>
+          <p class="font-heading text-5xl font-bold text-primary mb-2">€11<span class="text-xl text-dark/40">/uur</span></p>
+          <p class="text-dark/60 text-sm">Facturatie per kwartier</p>
+        </div>
+      </div>
+
+      <div class="clay-card bg-white p-8 mb-8">
+        <h2 class="font-heading text-2xl font-bold text-dark mb-6">Hoe werkt het?</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h3 class="font-heading text-lg font-bold text-primary mb-3">Vaste uren</h3>
+            <p class="text-dark/70 leading-relaxed">Opvanguren die door het jaar heen elke week op dezelfde dagen en uren worden ingevuld. Deze worden in de planning gereserveerd voor uw kind. Wijzigingen via e-mail, afmelden via Bitcare.</p>
+          </div>
+          <div>
+            <h3 class="font-heading text-lg font-bold text-primary mb-3">Flexibele uren</h3>
+            <p class="text-dark/70 leading-relaxed">Uiterlijk 4 weken voor het begin van de maand doorgeven welke dagen en uren uw kind komt. Ideaal voor ouders die flexibel werken.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="clay-card bg-clay-lilac/20 p-8 mb-8">
+        <h2 class="font-heading text-2xl font-bold text-dark mb-4">Praktische informatie</h2>
+        <ul class="space-y-4 text-dark/70">
+          <li class="flex gap-3"><svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><strong>Openingstijden:</strong> Ma–Vr 07:00–18:30. In overleg ook buiten deze tijden. Gesloten op weekenden en feestdagen. Geen zomersluiting.</span></li>
+          <li class="flex gap-3"><svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg><span><strong>Afmelden:</strong> Uiterlijk 1 week voor de opvangdag via Bitcare, anders worden de uren in rekening gebracht.</span></li>
+          <li class="flex gap-3"><svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg><span><strong>Betaling:</strong> Factuur in de eerste week van de maand, betaling op de 20ste via incasso of overboeking.</span></li>
+          <li class="flex gap-3"><svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/></svg><span><strong>Brengen/halen:</strong> Op elk moment, behalve tussen 12:00 en 13:00 (lunchpauze).</span></li>
+          <li class="flex gap-3"><svg class="w-6 h-6 text-primary flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg><span><strong>Vervoer school buiten Sambeek:</strong> ½ opvanguur per keer per kind.</span></li>
+        </ul>
+      </div>
+
+      <div class="clay-card bg-bg-warm p-8">
+        <h2 class="font-heading text-2xl font-bold text-dark mb-4">Extra's</h2>
+        <div class="grid sm:grid-cols-3 gap-6">
+          <div class="text-center">
+            <p class="font-heading text-2xl font-bold text-primary">Inclusief</p>
+            <p class="text-dark/60 text-sm mt-2">Fruit, drinken, broodmaaltijden, luiers</p>
+          </div>
+          <div class="text-center">
+            <p class="font-heading text-2xl font-bold text-cta">€1,50</p>
+            <p class="text-dark/60 text-sm mt-2">Ontbijt (tot 07:15)</p>
+          </div>
+          <div class="text-center">
+            <p class="font-heading text-2xl font-bold text-cta">€3,00</p>
+            <p class="text-dark/60 text-sm mt-2">Warme maaltijd (17:00–17:45)</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="contact.html" class="clay-btn bg-cta text-white font-bold text-lg px-8 py-4 hover:bg-cta-hover inline-block">Vraag meer informatie aan</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div><img src="images/logo.jpg" alt="Kinderrijkhuis" class="h-12 rounded-clay mb-4"><p class="text-white/60 text-sm">Flexibele kinderopvang en BSO in Sambeek</p></div>
+        <div><h4 class="font-heading font-bold mb-3">Opvang</h4><ul class="space-y-2 text-white/60 text-sm"><li><a href="opvang.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Kinderdagverblijf</a></li><li><a href="opvang.html" class="hover:text-white transition-colors duration-200 cursor-pointer">BSO</a></li></ul></div>
+        <div><h4 class="font-heading font-bold mb-3">Informatie</h4><ul class="space-y-2 text-white/60 text-sm"><li><a href="informatie.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Documenten</a></li><li><a href="tarieven.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Tarieven</a></li></ul></div>
+        <div><h4 class="font-heading font-bold mb-3">Contact</h4><ul class="space-y-2 text-white/60 text-sm"><li>Grotestraat 97a, 5836 AD Sambeek</li><li><a href="tel:0485215822" class="hover:text-white transition-colors duration-200 cursor-pointer">0485-215822</a></li><li><a href="mailto:info@kinderrijkhuis.nl" class="hover:text-white transition-colors duration-200 cursor-pointer">info@kinderrijkhuis.nl</a></li></ul></div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+        <p>Ma–Vr 07:00–18:30</p>
+        <p>Gebouwd door <a href="https://www.code-lieshout.nl" class="text-white/60 hover:text-white transition-colors duration-200 cursor-pointer">Code Lieshout</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle=document.getElementById('menuToggle'),close_=document.getElementById('menuClose'),nav=document.getElementById('mobileNav');
+    toggle.addEventListener('click',()=>nav.classList.add('active'));close_.addEventListener('click',()=>nav.classList.remove('active'));
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('active')));
+  </script>
+</body>
+</html>

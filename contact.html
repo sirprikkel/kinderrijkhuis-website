@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Neem contact op met Kinderrijkhuis Sambeek. Grotestraat 97a, 5836 AD Sambeek. Tel: 0485-215822.">
+  <title>Contact | Kinderrijkhuis Sambeek</title>
+  <link rel="icon" href="images/logo.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { heading: ['Fredoka','sans-serif'], body: ['Nunito','sans-serif'] },
+        colors: { primary:'#4F46E5','primary-light':'#818CF8',cta:'#F97316','cta-hover':'#EA580C',bg:'#EEF2FF','bg-warm':'#FFF7ED',dark:'#1E1B4B','clay-peach':'#FDBCB4','clay-blue':'#ADD8E6','clay-mint':'#98FF98','clay-lilac':'#E6E6FA' },
+        borderRadius: { clay:'20px' }
+      }}
+    }
+  </script>
+  <style>
+    *{font-family:'Nunito',sans-serif}h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
+    .clay-card{border-radius:20px;border:3px solid rgba(0,0,0,.08);box-shadow:inset -2px -2px 6px rgba(0,0,0,.06),4px 4px 12px rgba(79,70,229,.12);transition:transform .2s ease-out,box-shadow .2s ease-out}
+    .clay-card:hover{transform:translateY(-4px);box-shadow:inset -2px -2px 6px rgba(0,0,0,.06),6px 8px 20px rgba(79,70,229,.18)}
+    .clay-btn{border-radius:16px;border:3px solid rgba(0,0,0,.1);box-shadow:inset -1px -1px 4px rgba(0,0,0,.08),3px 3px 8px rgba(0,0,0,.12);transition:all .2s ease-out;cursor:pointer}
+    .clay-btn:hover{transform:translateY(-2px)}.clay-btn:active{transform:translateY(1px)}
+    .clay-input{border-radius:16px;border:3px solid rgba(0,0,0,.08);box-shadow:inset 2px 2px 6px rgba(0,0,0,.04);transition:border-color .2s,box-shadow .2s;outline:none}
+    .clay-input:focus{border-color:#4F46E5;box-shadow:inset 2px 2px 6px rgba(0,0,0,.04),0 0 0 3px rgba(79,70,229,.15)}
+    .nav-mobile{display:none;position:fixed;inset:0;z-index:50;background:rgba(30,27,75,.95);backdrop-filter:blur(10px)}.nav-mobile.active{display:flex}
+    @media(prefers-reduced-motion:reduce){.clay-card:hover,.clay-btn:hover{transform:none}}
+  </style>
+</head>
+<body class="bg-bg text-dark font-body">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b-3 border-primary/10 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
+      <a href="index.html" class="flex items-center gap-3 cursor-pointer"><img src="images/logo.jpg" alt="Kinderrijkhuis logo" class="h-10 md:h-14 rounded-clay object-contain"><span class="font-heading font-semibold text-lg md:text-xl text-primary hidden sm:block">Kinderrijkhuis</span></a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Home</a>
+        <a href="opvang.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Opvang</a>
+        <a href="tarieven.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Tarieven</a>
+        <a href="informatie.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Informatie</a>
+        <a href="contact.html" class="clay-btn bg-cta text-white font-bold px-5 py-2 hover:bg-cta-hover">Contact</a>
+      </div>
+      <button id="menuToggle" class="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer" aria-label="Menu openen"><svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </nav>
+  <div id="mobileNav" class="nav-mobile flex-col items-center justify-center gap-8">
+    <button id="menuClose" class="absolute top-5 right-5 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer" aria-label="Menu sluiten"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    <a href="index.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Home</a>
+    <a href="opvang.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Opvang</a>
+    <a href="tarieven.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Tarieven</a>
+    <a href="informatie.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Informatie</a>
+    <a href="contact.html" class="clay-btn bg-cta text-white text-xl font-bold px-8 py-3 cursor-pointer">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <section class="pt-28 pb-12 bg-gradient-to-br from-primary to-primary-light">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Contact</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Benieuwd naar Kinderrijkhuis? Neem gerust contact op voor een rondleiding of meer informatie.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="py-16">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10">
+
+        <!-- Info -->
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-dark mb-6">Contactgegevens</h2>
+          <div class="space-y-6">
+            <div class="clay-card bg-white p-6 flex gap-4 items-start">
+              <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <div>
+                <p class="font-bold">Mieke, Nienke en Dorien Langen</p>
+                <p class="text-dark/60 text-sm">Eigenaren Kinderrijkhuis</p>
+              </div>
+            </div>
+            <div class="clay-card bg-white p-6 flex gap-4 items-start">
+              <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              <div>
+                <p class="font-bold">Grotestraat 97a</p>
+                <p class="text-dark/60">5836 AD Sambeek</p>
+                <a href="https://maps.google.com/?q=Grotestraat+97a+Sambeek" target="_blank" rel="noopener" class="text-primary hover:text-cta text-sm font-semibold transition-colors duration-200 cursor-pointer">Bekijk op Google Maps →</a>
+              </div>
+            </div>
+            <div class="clay-card bg-white p-6 flex gap-4 items-start">
+              <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/></svg>
+              <div>
+                <a href="tel:0485215822" class="font-bold text-dark hover:text-primary transition-colors duration-200 cursor-pointer">0485-215822</a>
+              </div>
+            </div>
+            <div class="clay-card bg-white p-6 flex gap-4 items-start">
+              <svg class="w-6 h-6 text-primary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <div>
+                <a href="mailto:info@kinderrijkhuis.nl" class="font-bold text-dark hover:text-primary transition-colors duration-200 cursor-pointer">info@kinderrijkhuis.nl</a>
+              </div>
+            </div>
+            <div class="clay-card bg-clay-lilac/20 p-6">
+              <h3 class="font-heading font-bold text-dark mb-2">Openingstijden</h3>
+              <div class="grid grid-cols-2 gap-1 text-sm text-dark/70">
+                <span>Maandag – Vrijdag</span><span class="font-semibold">07:00 – 18:30</span>
+                <span>Zaterdag – Zondag</span><span class="font-semibold">Gesloten</span>
+              </div>
+              <p class="text-dark/50 text-xs mt-3">Gesloten op feestdagen. Geen zomersluiting.</p>
+            </div>
+            <div class="text-dark/40 text-sm">
+              <p>KVK: 61726915</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form -->
+        <div>
+          <h2 class="font-heading text-2xl font-bold text-dark mb-6">Stuur een bericht</h2>
+          <form action="mailto:info@kinderrijkhuis.nl" method="POST" enctype="text/plain" class="space-y-5">
+            <div>
+              <label class="block text-sm font-semibold text-dark/70 mb-1">Naam *</label>
+              <input type="text" name="naam" required class="clay-input w-full px-4 py-3 bg-white" placeholder="Uw naam">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-dark/70 mb-1">E-mail *</label>
+              <input type="email" name="email" required class="clay-input w-full px-4 py-3 bg-white" placeholder="uw@email.nl">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-dark/70 mb-1">Telefoon</label>
+              <input type="tel" name="telefoon" class="clay-input w-full px-4 py-3 bg-white" placeholder="06-12345678">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-dark/70 mb-1">Onderwerp</label>
+              <select name="onderwerp" class="clay-input w-full px-4 py-3 bg-white cursor-pointer">
+                <option value="">Kies een onderwerp</option>
+                <option value="inschrijving">Inschrijving</option>
+                <option value="rondleiding">Rondleiding</option>
+                <option value="tarieven">Tarieven</option>
+                <option value="informatie">Informatie</option>
+                <option value="anders">Anders</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-dark/70 mb-1">Bericht *</label>
+              <textarea name="bericht" rows="5" required class="clay-input w-full px-4 py-3 bg-white resize-none" placeholder="Uw bericht..."></textarea>
+            </div>
+            <button type="submit" class="clay-btn bg-cta text-white font-bold text-lg px-8 py-4 hover:bg-cta-hover w-full">
+              Verstuur bericht
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="mt-12 clay-card overflow-hidden">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2479.5!2d5.8336!3d51.6882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c1459c4f7a2d5d%3A0x28cfce9e4f682af4!2sKinderrijkhuis!5e0!3m2!1snl!2snl!4v1" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Kinderrijkhuis op Google Maps"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div><img src="images/logo.jpg" alt="Kinderrijkhuis" class="h-12 rounded-clay mb-4"><p class="text-white/60 text-sm">Flexibele kinderopvang en BSO in Sambeek</p></div>
+        <div><h4 class="font-heading font-bold mb-3">Opvang</h4><ul class="space-y-2 text-white/60 text-sm"><li><a href="opvang.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Kinderdagverblijf</a></li><li><a href="opvang.html" class="hover:text-white transition-colors duration-200 cursor-pointer">BSO</a></li></ul></div>
+        <div><h4 class="font-heading font-bold mb-3">Informatie</h4><ul class="space-y-2 text-white/60 text-sm"><li><a href="informatie.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Documenten</a></li><li><a href="tarieven.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Tarieven</a></li></ul></div>
+        <div><h4 class="font-heading font-bold mb-3">Contact</h4><ul class="space-y-2 text-white/60 text-sm"><li>Grotestraat 97a, 5836 AD Sambeek</li><li><a href="tel:0485215822" class="hover:text-white transition-colors duration-200 cursor-pointer">0485-215822</a></li><li><a href="mailto:info@kinderrijkhuis.nl" class="hover:text-white transition-colors duration-200 cursor-pointer">info@kinderrijkhuis.nl</a></li></ul></div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+        <p>Ma–Vr 07:00–18:30</p>
+        <p>Gebouwd door <a href="https://www.code-lieshout.nl" class="text-white/60 hover:text-white transition-colors duration-200 cursor-pointer">Code Lieshout</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle=document.getElementById('menuToggle'),close_=document.getElementById('menuClose'),nav=document.getElementById('mobileNav');
+    toggle.addEventListener('click',()=>nav.classList.add('active'));close_.addEventListener('click',()=>nav.classList.remove('active'));
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('active')));
+  </script>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Informatie en documenten van Kinderrijkhuis Sambeek. Pedagogisch beleid, GGD rapporten, oudercommissie en meer.">
+  <title>Informatie | Kinderrijkhuis Sambeek</title>
+  <link rel="icon" href="images/logo.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        fontFamily: { heading: ['Fredoka','sans-serif'], body: ['Nunito','sans-serif'] },
+        colors: { primary:'#4F46E5','primary-light':'#818CF8',cta:'#F97316','cta-hover':'#EA580C',bg:'#EEF2FF','bg-warm':'#FFF7ED',dark:'#1E1B4B','clay-peach':'#FDBCB4','clay-blue':'#ADD8E6','clay-mint':'#98FF98','clay-lilac':'#E6E6FA' },
+        borderRadius: { clay:'20px' }
+      }}
+    }
+  </script>
+  <style>
+    *{font-family:'Nunito',sans-serif}h1,h2,h3,h4{font-family:'Fredoka',sans-serif}
+    .clay-card{border-radius:20px;border:3px solid rgba(0,0,0,.08);box-shadow:inset -2px -2px 6px rgba(0,0,0,.06),4px 4px 12px rgba(79,70,229,.12);transition:transform .2s ease-out,box-shadow .2s ease-out}
+    .clay-card:hover{transform:translateY(-4px);box-shadow:inset -2px -2px 6px rgba(0,0,0,.06),6px 8px 20px rgba(79,70,229,.18)}
+    .clay-btn{border-radius:16px;border:3px solid rgba(0,0,0,.1);box-shadow:inset -1px -1px 4px rgba(0,0,0,.08),3px 3px 8px rgba(0,0,0,.12);transition:all .2s ease-out;cursor:pointer}
+    .clay-btn:hover{transform:translateY(-2px)}.clay-btn:active{transform:translateY(1px)}
+    .nav-mobile{display:none;position:fixed;inset:0;z-index:50;background:rgba(30,27,75,.95);backdrop-filter:blur(10px)}.nav-mobile.active{display:flex}
+    @media(prefers-reduced-motion:reduce){.clay-card:hover,.clay-btn:hover{transform:none}}
+  </style>
+</head>
+<body class="bg-bg text-dark font-body">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b-3 border-primary/10 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
+      <a href="index.html" class="flex items-center gap-3 cursor-pointer"><img src="images/logo.jpg" alt="Kinderrijkhuis logo" class="h-10 md:h-14 rounded-clay object-contain"><span class="font-heading font-semibold text-lg md:text-xl text-primary hidden sm:block">Kinderrijkhuis</span></a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Home</a>
+        <a href="opvang.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Opvang</a>
+        <a href="tarieven.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Tarieven</a>
+        <a href="informatie.html" class="font-semibold text-primary hover:text-cta transition-colors duration-200 cursor-pointer">Informatie</a>
+        <a href="contact.html" class="clay-btn bg-cta text-white font-bold px-5 py-2 hover:bg-cta-hover">Contact</a>
+      </div>
+      <button id="menuToggle" class="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer" aria-label="Menu openen"><svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+    </div>
+  </nav>
+  <div id="mobileNav" class="nav-mobile flex-col items-center justify-center gap-8">
+    <button id="menuClose" class="absolute top-5 right-5 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer" aria-label="Menu sluiten"><svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg></button>
+    <a href="index.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Home</a>
+    <a href="opvang.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Opvang</a>
+    <a href="tarieven.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Tarieven</a>
+    <a href="informatie.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Informatie</a>
+    <a href="contact.html" class="clay-btn bg-cta text-white text-xl font-bold px-8 py-3 cursor-pointer">Contact</a>
+  </div>
+
+  <!-- Page Header -->
+  <section class="pt-28 pb-12 bg-gradient-to-br from-primary to-primary-light">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <h1 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Informatie</h1>
+      <p class="text-white/80 text-lg max-w-2xl">Alle documenten en beleidsstukken van Kinderrijkhuis. Jaarlijks gecontroleerd door de oudercommissie, pedagogisch medewerkers en de GGD.</p>
+    </div>
+  </section>
+
+  <!-- Documents -->
+  <section class="py-16">
+    <div class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
+
+      <div class="clay-card bg-white p-8 mb-8">
+        <h2 class="font-heading text-2xl font-bold text-dark mb-4">Informatieboekje</h2>
+        <p class="text-dark/70 leading-relaxed mb-4">Alle praktische informatie over Kinderrijkhuis leest u in het informatieboekje. De onderwerpen worden uitgebreid beschreven in onderstaande documenten.</p>
+        <a href="http://kinderrijkhuis.nl/wp-content/uploads/2025/12/Informatieboekje-kinderrijkhuis-2026.docx" class="clay-btn bg-primary text-white font-bold px-6 py-3 hover:bg-primary-light inline-block" target="_blank" rel="noopener">
+          Download Informatieboekje 2026
+        </a>
+      </div>
+
+      <h2 class="font-heading text-2xl font-bold text-dark mb-6">Documenten & Beleid</h2>
+      <div class="grid sm:grid-cols-2 gap-6 mb-12">
+        <div class="clay-card bg-clay-peach/20 p-6">
+          <svg class="w-8 h-8 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          <h3 class="font-heading text-lg font-bold text-dark mb-2">Pedagogisch beleid</h3>
+          <p class="text-dark/60 text-sm">Pedagogisch beleidsplan 2026</p>
+        </div>
+        <div class="clay-card bg-clay-blue/20 p-6">
+          <svg class="w-8 h-8 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          <h3 class="font-heading text-lg font-bold text-dark mb-2">Veiligheid & Gezondheid</h3>
+          <p class="text-dark/60 text-sm">Veiligheids- en gezondheidsbeleid 2026</p>
+        </div>
+        <div class="clay-card bg-clay-mint/20 p-6">
+          <svg class="w-8 h-8 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L4.072 16.5c-.77.833.192 2.5 1.732 2.5z"/></svg>
+          <h3 class="font-heading text-lg font-bold text-dark mb-2">Protocollen</h3>
+          <p class="text-dark/60 text-sm">Kindermishandeling, hitte, veilig slapen, ziektebeleid</p>
+        </div>
+        <div class="clay-card bg-clay-lilac/20 p-6">
+          <svg class="w-8 h-8 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+          <h3 class="font-heading text-lg font-bold text-dark mb-2">GGD Rapporten</h3>
+          <p class="text-dark/60 text-sm">Inspectierapporten van de GGD</p>
+        </div>
+        <div class="clay-card bg-bg-warm p-6">
+          <svg class="w-8 h-8 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          <h3 class="font-heading text-lg font-bold text-dark mb-2">Oudercommissie</h3>
+          <p class="text-dark/60 text-sm">Huishoudelijk reglement en regelement oudercommissie</p>
+        </div>
+        <div class="clay-card bg-clay-peach/10 p-6">
+          <svg class="w-8 h-8 text-primary mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+          <h3 class="font-heading text-lg font-bold text-dark mb-2">Privacy & Klachten</h3>
+          <p class="text-dark/60 text-sm">Privacybeleid, klachtenregeling en geschillencommissie</p>
+        </div>
+      </div>
+
+      <div class="clay-card bg-white p-8 mb-8">
+        <h2 class="font-heading text-2xl font-bold text-dark mb-4">Pedagogisch Coach</h2>
+        <p class="text-dark/70 leading-relaxed">Karin Ebben is de pedagogisch coach van Kinderrijkhuis. Op de website vindt u interessante documenten van Karin voor ouders en pedagogisch medewerkers.</p>
+      </div>
+
+      <div class="clay-card bg-clay-blue/10 p-8">
+        <h2 class="font-heading text-2xl font-bold text-dark mb-4">Kinderopvangtoeslag</h2>
+        <p class="text-dark/70 leading-relaxed mb-3">Voor het aanvragen van kinderopvangtoeslag heeft u onze LRK-nummers nodig:</p>
+        <div class="flex flex-wrap gap-4">
+          <div class="clay-card bg-white px-5 py-3"><p class="text-sm text-dark/60">LRK KDV</p><p class="font-heading font-bold text-primary">189212512</p></div>
+          <div class="clay-card bg-white px-5 py-3"><p class="text-sm text-dark/60">LRK BSO</p><p class="font-heading font-bold text-primary">993945399</p></div>
+        </div>
+      </div>
+
+      <p class="text-dark/50 text-sm text-center mt-8">Documenten worden jaarlijks gecontroleerd door de oudercommissie, de pedagogisch medewerkers en de GGD. Andere protocollen zijn digitaal opvraagbaar.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div><img src="images/logo.jpg" alt="Kinderrijkhuis" class="h-12 rounded-clay mb-4"><p class="text-white/60 text-sm">Flexibele kinderopvang en BSO in Sambeek</p></div>
+        <div><h4 class="font-heading font-bold mb-3">Opvang</h4><ul class="space-y-2 text-white/60 text-sm"><li><a href="opvang.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Kinderdagverblijf</a></li><li><a href="opvang.html" class="hover:text-white transition-colors duration-200 cursor-pointer">BSO</a></li></ul></div>
+        <div><h4 class="font-heading font-bold mb-3">Informatie</h4><ul class="space-y-2 text-white/60 text-sm"><li><a href="informatie.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Documenten</a></li><li><a href="tarieven.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Tarieven</a></li></ul></div>
+        <div><h4 class="font-heading font-bold mb-3">Contact</h4><ul class="space-y-2 text-white/60 text-sm"><li>Grotestraat 97a, 5836 AD Sambeek</li><li><a href="tel:0485215822" class="hover:text-white transition-colors duration-200 cursor-pointer">0485-215822</a></li><li><a href="mailto:info@kinderrijkhuis.nl" class="hover:text-white transition-colors duration-200 cursor-pointer">info@kinderrijkhuis.nl</a></li></ul></div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+        <p>Ma–Vr 07:00–18:30</p>
+        <p>Gebouwd door <a href="https://www.code-lieshout.nl" class="text-white/60 hover:text-white transition-colors duration-200 cursor-pointer">Code Lieshout</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle=document.getElementById('menuToggle'),close_=document.getElementById('menuClose'),nav=document.getElementById('mobileNav');
+    toggle.addEventListener('click',()=>nav.classList.add('active'));close_.addEventListener('click',()=>nav.classList.remove('active'));
+    nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('active')));
+  </script>
+</body>
+</html>

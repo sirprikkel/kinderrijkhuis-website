@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kinderrijkhuis Sambeek — Flexibele kinderopvang, kinderdagverblijf en BSO voor kinderen van 0 tot 13 jaar. Persoonlijke aandacht, dierenweide en grote buitenspeelruimte.">
+  <title>Kinderrijkhuis Sambeek | Flexibele Kinderopvang en BSO</title>
+  <link rel="icon" href="images/logo.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            heading: ['Fredoka', 'sans-serif'],
+            body: ['Nunito', 'sans-serif'],
+          },
+          colors: {
+            primary: '#4F46E5',
+            'primary-light': '#818CF8',
+            cta: '#F97316',
+            'cta-hover': '#EA580C',
+            bg: '#EEF2FF',
+            'bg-warm': '#FFF7ED',
+            dark: '#1E1B4B',
+            'clay-peach': '#FDBCB4',
+            'clay-blue': '#ADD8E6',
+            'clay-mint': '#98FF98',
+            'clay-lilac': '#E6E6FA',
+          },
+          borderRadius: {
+            'clay': '20px',
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Nunito', sans-serif; }
+    h1, h2, h3, h4 { font-family: 'Fredoka', sans-serif; }
+
+    .clay-card {
+      border-radius: 20px;
+      border: 3px solid rgba(0,0,0,0.08);
+      box-shadow: 
+        inset -2px -2px 6px rgba(0,0,0,0.06),
+        4px 4px 12px rgba(79,70,229,0.12);
+      transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    }
+    .clay-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 
+        inset -2px -2px 6px rgba(0,0,0,0.06),
+        6px 8px 20px rgba(79,70,229,0.18);
+    }
+
+    .clay-btn {
+      border-radius: 16px;
+      border: 3px solid rgba(0,0,0,0.1);
+      box-shadow: 
+        inset -1px -1px 4px rgba(0,0,0,0.08),
+        3px 3px 8px rgba(0,0,0,0.12);
+      transition: all 0.2s ease-out;
+      cursor: pointer;
+    }
+    .clay-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 
+        inset -1px -1px 4px rgba(0,0,0,0.08),
+        4px 5px 12px rgba(0,0,0,0.16);
+    }
+    .clay-btn:active {
+      transform: translateY(1px);
+      box-shadow: 
+        inset 2px 2px 4px rgba(0,0,0,0.12),
+        1px 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(79,70,229,0.85) 0%, rgba(129,140,248,0.7) 100%);
+    }
+
+    @keyframes softBounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .bounce-soft { animation: softBounce 3s cubic-bezier(0.34, 1.56, 0.64, 1) infinite; }
+
+    .nav-mobile {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      background: rgba(30,27,75,0.95);
+      backdrop-filter: blur(10px);
+    }
+    .nav-mobile.active { display: flex; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .clay-card:hover { transform: none; }
+      .clay-btn:hover { transform: none; }
+      .bounce-soft { animation: none; }
+    }
+  </style>
+</head>
+<body class="bg-bg text-dark font-body">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-md border-b-3 border-primary/10 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
+      <a href="index.html" class="flex items-center gap-3 cursor-pointer">
+        <img src="images/logo.jpg" alt="Kinderrijkhuis logo" class="h-10 md:h-14 rounded-clay object-contain">
+        <span class="font-heading font-semibold text-lg md:text-xl text-primary hidden sm:block">Kinderrijkhuis</span>
+      </a>
+      <div class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="font-semibold text-primary hover:text-cta transition-colors duration-200 cursor-pointer">Home</a>
+        <a href="opvang.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Opvang</a>
+        <a href="tarieven.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Tarieven</a>
+        <a href="informatie.html" class="font-semibold text-dark/70 hover:text-primary transition-colors duration-200 cursor-pointer">Informatie</a>
+        <a href="contact.html" class="clay-btn bg-cta text-white font-bold px-5 py-2 hover:bg-cta-hover">Contact</a>
+      </div>
+      <button id="menuToggle" class="md:hidden min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer" aria-label="Menu openen">
+        <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div id="mobileNav" class="nav-mobile flex-col items-center justify-center gap-8">
+    <button id="menuClose" class="absolute top-5 right-5 min-h-[44px] min-w-[44px] flex items-center justify-center cursor-pointer" aria-label="Menu sluiten">
+      <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+    <a href="index.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Home</a>
+    <a href="opvang.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Opvang</a>
+    <a href="tarieven.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Tarieven</a>
+    <a href="informatie.html" class="text-white text-2xl font-heading font-semibold cursor-pointer">Informatie</a>
+    <a href="contact.html" class="clay-btn bg-cta text-white text-xl font-bold px-8 py-3 cursor-pointer">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative min-h-[90vh] flex items-center pt-20" style="background: url('images/gebouw.jpg') center/cover no-repeat;">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div class="relative z-10 max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-20">
+      <div class="max-w-2xl">
+        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+          Waar kinderen <span class="text-clay-peach">spelen</span>, groeien en ontdekken
+        </h1>
+        <p class="text-white/90 text-lg md:text-xl mb-8 leading-relaxed font-light">
+          Flexibele kinderopvang en BSO in Sambeek voor kinderen van 0 tot 13 jaar. Met dierenweide, grote buitenspeelruimte en persoonlijke aandacht.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="contact.html" class="clay-btn bg-cta text-white font-bold text-lg px-8 py-4 hover:bg-cta-hover">
+            Inschrijven
+          </a>
+          <a href="opvang.html" class="clay-btn bg-white/20 text-white font-bold text-lg px-8 py-4 hover:bg-white/30 backdrop-blur-sm">
+            Meer over opvang
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-8 -mt-12 relative z-20">
+    <div class="max-w-5xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="clay-card bg-white p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <p class="font-heading text-3xl md:text-4xl font-bold text-primary">2000</p>
+          <p class="text-dark/60 text-sm mt-1">Gestart als gastouder</p>
+        </div>
+        <div>
+          <p class="font-heading text-3xl md:text-4xl font-bold text-primary">0–13</p>
+          <p class="text-dark/60 text-sm mt-1">Jaar oud welkom</p>
+        </div>
+        <div>
+          <p class="font-heading text-3xl md:text-4xl font-bold text-primary">5</p>
+          <p class="text-dark/60 text-sm mt-1">Dagen per week open</p>
+        </div>
+        <div>
+          <p class="font-heading text-3xl md:text-4xl font-bold text-primary bounce-soft">🐐</p>
+          <p class="text-dark/60 text-sm mt-1">Eigen dierenweide</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Over Ons -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-6">Ontstaan uit passie</h2>
+          <p class="text-dark/80 text-lg leading-relaxed mb-4">
+            Kinderrijkhuis is ontstaan uit de passie van Mieke, zorgen voor kinderen. In 2000 begon zij als oppasmoeder, later werd zij officieel gastouder in haar woonhuis. Door de goede verhalen van ouders werd het steeds drukker.
+          </p>
+          <p class="text-dark/80 text-lg leading-relaxed mb-4">
+            De stap richting een nieuwe droom werd gezet. Op 1 april 2014 opende Kinderrijkhuis de deuren van het mooie nieuwe gebouw. Dochter Nienke sloot zich aan, en later volgde dochter Dorien dezelfde passie.
+          </p>
+          <p class="text-dark/80 text-lg leading-relaxed">
+            Kinderrijkhuis is een VOF. Mieke, Nienke en Dorien Langen zijn hoofdverantwoordelijk en regelen het reilen en zeilen.
+          </p>
+        </div>
+        <div class="clay-card overflow-hidden">
+          <img src="images/google_place_1.jpg" alt="Kinderrijkhuis Sambeek" class="w-full h-80 object-cover" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Diensten -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary text-center mb-4">Onze opvang</h2>
+      <p class="text-dark/60 text-center text-lg mb-12 max-w-2xl mx-auto">Particuliere dagopvang voor kinderen van 0 tot 13 jaar, met vaste pedagogisch medewerkers en veel aandacht voor elk kind.</p>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- KDV -->
+        <div class="clay-card bg-clay-peach/30 p-8">
+          <div class="w-14 h-14 rounded-clay bg-clay-peach flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-dark mb-3">Kinderdagverblijf (0–4 jaar)</h3>
+          <p class="text-dark/70 leading-relaxed">Twee speelruimtes ingericht voor de kleinsten. Vaste pedagogisch medewerkers verzorgen de kindjes zoveel mogelijk in het thuisritme. Ieder kind slaapt alleen op een eigen slaapkamertje.</p>
+        </div>
+        <!-- Peuter -->
+        <div class="clay-card bg-clay-blue/30 p-8">
+          <div class="w-14 h-14 rounded-clay bg-clay-blue flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-dark mb-3">Peutergroepen (2+ jaar)</h3>
+          <p class="text-dark/70 leading-relaxed">Voorbereiding op de basisschool. Veel aandacht voor groepsactiviteiten. Peuters worden uitgedaagd door diversiteit aan activiteiten: samenwerken, ontdekken en ervaren.</p>
+        </div>
+        <!-- BSO -->
+        <div class="clay-card bg-clay-mint/30 p-8">
+          <div class="w-14 h-14 rounded-clay bg-clay-mint flex items-center justify-center mb-5">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <h3 class="font-heading text-xl font-bold text-dark mb-3">BSO (4–13 jaar)</h3>
+          <p class="text-dark/70 leading-relaxed">Kinderen worden naar school gebracht en opgehaald. Na schooltijd vrij om te ontspannen: buiten voetballen, klimmen, of rustig lezen. Pedagogisch medewerkers bieden uitdagende activiteiten.</p>
+        </div>
+      </div>
+
+      <div class="text-center mt-10">
+        <a href="opvang.html" class="clay-btn bg-primary text-white font-bold px-8 py-3 hover:bg-primary-light inline-block cursor-pointer">
+          Meer over onze opvang
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buiten & Dieren -->
+  <section class="py-16 md:py-24">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div class="order-2 md:order-1 grid grid-cols-2 gap-4">
+          <div class="clay-card overflow-hidden">
+            <img src="images/google_place_2.jpg" alt="Buitenruimte Kinderrijkhuis" class="w-full h-48 object-cover" loading="lazy">
+          </div>
+          <div class="clay-card overflow-hidden">
+            <img src="images/google_place_3.jpg" alt="Speelruimte Kinderrijkhuis" class="w-full h-48 object-cover" loading="lazy">
+          </div>
+          <div class="clay-card overflow-hidden col-span-2">
+            <img src="images/google_place_4.jpg" alt="Kinderrijkhuis activiteiten" class="w-full h-48 object-cover" loading="lazy">
+          </div>
+        </div>
+        <div class="order-1 md:order-2">
+          <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-6">Buitenspelen & dierenweide</h2>
+          <p class="text-dark/80 text-lg leading-relaxed mb-4">
+            Een grote buitenspeelruimte waar kinderen veilig kunnen spelen. Het grote grasveld met klimrekken biedt uitdaging voor alle leeftijden. De omliggende ontdektuin zorgt ervoor dat kinderen op ontdekking gaan in de natuur.
+          </p>
+          <p class="text-dark/80 text-lg leading-relaxed">
+            De dierenweide is de plek waar kinderen ongedwongen en veilig in contact komen met dieren. Ze mogen helpen met de verzorging van geitjes, schaapjes, koeien, de pony en hangbuikzwijntjes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Flexibel -->
+  <section class="py-16 md:py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-primary mb-6">Flexibele opvang, eerlijke tarieven</h2>
+      <p class="text-dark/70 text-lg leading-relaxed mb-6">
+        Bij Kinderrijkhuis betaalt u alleen voor de uren die u daadwerkelijk gebruikt. Facturatie per kwartier. Ouders reserveren zelf de opvangtijden die nodig zijn — vast of flexibel.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-6 mt-10 text-left">
+        <div class="clay-card bg-clay-lilac/30 p-6">
+          <h3 class="font-heading text-lg font-bold text-dark mb-2">Vaste uren</h3>
+          <p class="text-dark/70">Elke week dezelfde dagen en uren. Gereserveerd in de planning voor uw kind.</p>
+        </div>
+        <div class="clay-card bg-bg-warm p-6">
+          <h3 class="font-heading text-lg font-bold text-dark mb-2">Flexibele uren</h3>
+          <p class="text-dark/70">Uiterlijk 4 weken vooraf doorgeven. Ideaal voor ouders die flexibel werken.</p>
+        </div>
+      </div>
+      <div class="mt-10">
+        <a href="tarieven.html" class="clay-btn bg-cta text-white font-bold px-8 py-3 hover:bg-cta-hover inline-block cursor-pointer">
+          Bekijk tarieven
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 md:py-24 bg-gradient-to-br from-primary to-primary-light">
+    <div class="max-w-4xl mx-auto px-4 md:px-6 lg:px-8 text-center">
+      <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">Kom kennismaken!</h2>
+      <p class="text-white/80 text-lg mb-8">Benieuwd naar Kinderrijkhuis? Neem contact op voor een rondleiding of meer informatie over onze opvang.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="contact.html" class="clay-btn bg-cta text-white font-bold text-lg px-8 py-4 hover:bg-cta-hover">
+          Neem contact op
+        </a>
+        <a href="tel:0485215822" class="clay-btn bg-white/20 text-white font-bold text-lg px-8 py-4 hover:bg-white/30">
+          Bel 0485-215822
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white py-12">
+    <div class="max-w-6xl mx-auto px-4 md:px-6 lg:px-8">
+      <div class="grid sm:grid-cols-2 md:grid-cols-4 gap-8">
+        <div>
+          <img src="images/logo.jpg" alt="Kinderrijkhuis" class="h-12 rounded-clay mb-4">
+          <p class="text-white/60 text-sm">Flexibele kinderopvang en BSO in Sambeek</p>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold mb-3">Opvang</h4>
+          <ul class="space-y-2 text-white/60 text-sm">
+            <li><a href="opvang.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Kinderdagverblijf</a></li>
+            <li><a href="opvang.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Peutergroepen</a></li>
+            <li><a href="opvang.html" class="hover:text-white transition-colors duration-200 cursor-pointer">BSO</a></li>
+            <li><a href="tarieven.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Tarieven</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold mb-3">Informatie</h4>
+          <ul class="space-y-2 text-white/60 text-sm">
+            <li><a href="informatie.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Documenten</a></li>
+            <li><a href="informatie.html" class="hover:text-white transition-colors duration-200 cursor-pointer">Pedagogisch beleid</a></li>
+            <li><a href="informatie.html" class="hover:text-white transition-colors duration-200 cursor-pointer">GGD rapporten</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-heading font-bold mb-3">Contact</h4>
+          <ul class="space-y-2 text-white/60 text-sm">
+            <li>Grotestraat 97a</li>
+            <li>5836 AD Sambeek</li>
+            <li><a href="tel:0485215822" class="hover:text-white transition-colors duration-200 cursor-pointer">0485-215822</a></li>
+            <li><a href="mailto:info@kinderrijkhuis.nl" class="hover:text-white transition-colors duration-200 cursor-pointer">info@kinderrijkhuis.nl</a></li>
+          </ul>
+          <div class="mt-3">
+            <p class="text-white/40 text-xs">KVK: 61726915</p>
+            <p class="text-white/40 text-xs">LRK KDV: 189212512</p>
+            <p class="text-white/40 text-xs">LRK BSO: 993945399</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-10 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-white/40 text-sm">
+        <p>Ma–Vr 07:00–18:30 | Za–Zo gesloten</p>
+        <p>Gebouwd door <a href="https://www.code-lieshout.nl" class="text-white/60 hover:text-white transition-colors duration-200 cursor-pointer">Code Lieshout</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.getElementById('menuToggle');
+    const close = document.getElementById('menuClose');
+    const nav = document.getElementById('mobileNav');
+    toggle.addEventListener('click', () => nav.classList.add('active'));
+    close.addEventListener('click', () => nav.classList.remove('active'));
+    nav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nav.classList.remove('active')));
+  </script>
+</body>
+</html>
